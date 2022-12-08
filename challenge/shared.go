@@ -8,8 +8,6 @@ import (
 	"runtime"
 )
 
-var packageRegexp = regexp.MustCompile(`aoc2022/day(\d{2})`)
-
 func Input() string {
 	day := challengeDay()
 	inputFile, err := os.ReadFile(path.Join("day"+day, "input"))
@@ -18,6 +16,13 @@ func Input() string {
 	}
 	return string(inputFile)
 }
+
+type Challenge interface {
+	Part1() interface{}
+	Part2() interface{}
+}
+
+var packageRegexp = regexp.MustCompile(`aoc2022/day(\d{2})`)
 
 func challengeDay() string {
 	_, file, _, ok := runtime.Caller(2)
@@ -29,11 +34,6 @@ func challengeDay() string {
 	return day
 }
 
-func OutputPart1(res interface{}) {
-	log.Printf("day %s - part 1: %v", challengeDay(), res)
-}
-
-func OutputPart2(res interface{}) {
-	log.Printf("day %s - part 2: %v", challengeDay(), res)
-	log.Println("---------------------")
+func OutputPart(day int, part int, res interface{}) {
+	log.Printf("day %d - part %d: %v", day, part, res)
 }

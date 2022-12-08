@@ -8,21 +8,20 @@ import (
 	"strings"
 )
 
-func Run() {
-	part1()
-	part2()
+type c struct{}
+
+func (c) Part1() interface{} {
+	input := challenge.Input()
+	return countAssignmentOverlaps(input, true)
 }
 
-func part1() {
+func (c) Part2() interface{} {
 	input := challenge.Input()
-	overlapCount := countAssignmentOverlaps(input, true)
-	challenge.OutputPart1(overlapCount)
+	return countAssignmentOverlaps(input, false)
 }
 
-func part2() {
-	input := challenge.Input()
-	res := countAssignmentOverlaps(input, false)
-	challenge.OutputPart2(res)
+func Challenge() challenge.Challenge {
+	return c{}
 }
 
 func countAssignmentOverlaps(input string, total bool) int {

@@ -9,21 +9,20 @@ import (
 	"strings"
 )
 
-func Run() {
-	part1()
-	part2()
+type c struct{}
+
+func (c) Part1() interface{} {
+	input := challenge.Input()
+	return getTopStacks(input, true)
 }
 
-func part1() {
+func (c) Part2() interface{} {
 	input := challenge.Input()
-	overlapCount := getTopStacks(input, true)
-	challenge.OutputPart1(overlapCount)
+	return getTopStacks(input, false)
 }
 
-func part2() {
-	input := challenge.Input()
-	res := getTopStacks(input, false)
-	challenge.OutputPart2(res)
+func Challenge() challenge.Challenge {
+	return c{}
 }
 
 var containerRegexp = regexp.MustCompile(`[(\w+)]`)

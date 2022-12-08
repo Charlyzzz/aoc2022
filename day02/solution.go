@@ -45,19 +45,18 @@ func (p playLoose) play(opponent pick) int {
 	return opponent.loose().play(opponent)
 }
 
-func Run() {
-	part1()
-	part2()
+type c struct{}
+
+func (c) Part1() interface{} {
+	return computeScore(true)
 }
 
-func part1() {
-	res := computeScore(true)
-	challenge.OutputPart1(res)
+func (c) Part2() interface{} {
+	return computeScore(false)
 }
 
-func part2() {
-	res := computeScore(false)
-	challenge.OutputPart2(res)
+func Challenge() challenge.Challenge {
+	return c{}
 }
 
 func computeScore(isPlay bool) int {

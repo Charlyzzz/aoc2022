@@ -5,21 +5,20 @@ import (
 	"log"
 )
 
-func Run() {
-	part1()
-	part2()
+type c struct{}
+
+func (c) Part1() interface{} {
+	input := challenge.Input()
+	return signalMarker(input, 4)
 }
 
-func part1() {
+func (c) Part2() interface{} {
 	input := challenge.Input()
-	overlapCount := signalMarker(input, 4)
-	challenge.OutputPart1(overlapCount)
+	return signalMarker(input, 14)
 }
 
-func part2() {
-	input := challenge.Input()
-	res := signalMarker(input, 14)
-	challenge.OutputPart2(res)
+func Challenge() challenge.Challenge {
+	return c{}
 }
 
 func signalMarker(input string, preambleLen int) int {

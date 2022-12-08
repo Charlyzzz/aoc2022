@@ -7,21 +7,20 @@ import (
 	"strings"
 )
 
-func Run() {
-	part1()
-	part2()
+type c struct{}
+
+func (c) Part1() interface{} {
+	input := challenge.Input()
+	return sumDuplicatePriorities(input)
 }
 
-func part1() {
+func (c) Part2() interface{} {
 	input := challenge.Input()
-	res := sumDuplicatePriorities(input)
-	challenge.OutputPart1(res)
+	return sumBadgesPriorities(input)
 }
 
-func part2() {
-	input := challenge.Input()
-	res := sumBadgesPriorities(input)
-	challenge.OutputPart2(res)
+func Challenge() challenge.Challenge {
+	return c{}
 }
 
 func sumBadgesPriorities(input string) int {
