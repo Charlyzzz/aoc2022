@@ -21,6 +21,10 @@ func (c) Part2() interface{} {
 	return getTopStacks(input, false)
 }
 
+func (c) Day() int {
+	return 5
+}
+
 func Challenge() challenge.Challenge {
 	return c{}
 }

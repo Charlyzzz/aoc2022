@@ -20,6 +20,7 @@ func Input() string {
 type Challenge interface {
 	Part1() interface{}
 	Part2() interface{}
+	Day() int
 }
 
 var packageRegexp = regexp.MustCompile(`aoc2022/day(\d{2})`)
@@ -35,5 +36,5 @@ func challengeDay() string {
 }
 
 func OutputPart(day int, part int, res interface{}) {
-	log.Printf("day %d - part %d: %v", day, part, res)
+	log.Printf("day %02d - part %d: %v", day, part, res)
 }

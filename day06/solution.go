@@ -17,6 +17,10 @@ func (c) Part2() interface{} {
 	return signalMarker(input, 14)
 }
 
+func (c) Day() int {
+	return 6
+}
+
 func Challenge() challenge.Challenge {
 	return c{}
 }

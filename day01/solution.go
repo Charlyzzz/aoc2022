@@ -17,6 +17,10 @@ func (c) Part2() interface{} {
 	return caloriesForTop(3)
 }
 
+func (c) Day() int {
+	return 1
+}
+
 func Challenge() challenge.Challenge {
 	return c{}
 }

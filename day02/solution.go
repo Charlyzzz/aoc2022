@@ -55,6 +55,10 @@ func (c) Part2() interface{} {
 	return computeScore(false)
 }
 
+func (c) Day() int {
+	return 2
+}
+
 func Challenge() challenge.Challenge {
 	return c{}
 }

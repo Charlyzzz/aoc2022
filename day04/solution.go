@@ -20,6 +20,10 @@ func (c) Part2() interface{} {
 	return countAssignmentOverlaps(input, false)
 }
 
+func (c) Day() int {
+	return 4
+}
+
 func Challenge() challenge.Challenge {
 	return c{}
 }

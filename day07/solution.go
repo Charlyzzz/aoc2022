@@ -21,6 +21,10 @@ func (c) Part2() interface{} {
 	return smallestDirectorySizeToDelete(input)
 }
 
+func (c) Day() int {
+	return 7
+}
+
 func Challenge() challenge.Challenge {
 	return c{}
 }

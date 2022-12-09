@@ -19,6 +19,10 @@ func (c) Part2() interface{} {
 	return sumBadgesPriorities(input)
 }
 
+func (c) Day() int {
+	return 3
+}
+
 func Challenge() challenge.Challenge {
 	return c{}
 }
