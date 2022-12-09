@@ -9,6 +9,7 @@ import (
 	"aoc2022/day05"
 	"aoc2022/day06"
 	"aoc2022/day07"
+	"aoc2022/day08"
 )
 
 func main() {
@@ -20,12 +21,14 @@ func main() {
 		day05.Challenge(),
 		day06.Challenge(),
 		day07.Challenge(),
+		day08.Challenge(),
 	}
 
-	for idx, c := range challenges {
+	for _, c := range challenges {
 		output := c.Part1()
-		challenge.OutputPart(idx+1, 1, output)
+		day := c.Day()
+		challenge.OutputPart(day, 1, output)
 		output = c.Part2()
-		challenge.OutputPart(idx+1, 2, output)
+		challenge.OutputPart(day, 2, output)
 	}
 }
