@@ -11,6 +11,7 @@ import (
 	"aoc2022/day07"
 	"aoc2022/day08"
 	"aoc2022/day09"
+	"aoc2022/day10"
 )
 
 func main() {
@@ -24,6 +25,7 @@ func main() {
 		day07.Challenge(),
 		day08.Challenge(),
 		day09.Challenge(),
+		day10.Challenge(),
 	}
 
 	for _, c := range challenges {
